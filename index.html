@@ -5,53 +5,96 @@
   <title>Formulário de Cadastro</title>
   <style>
     body {
-      font-family: Arial;
-      padding: 20px;
-      background-color: #f9f9f9;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74ebd5, #acb6e5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
+
     .container {
-      background: #fff;
-      padding: 20px;
-      border: 2px dashed red;
-      width: 300px;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      width: 320px;
+      position: relative;
     }
-    input, button {
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      font-weight: 600;
+      margin-top: 12px;
       display: block;
-      margin-bottom: 10px;
-      padding: 8px;
-      width: 90%;
+      color: #555;
     }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
     button {
-      background-color: green;
+      background-color: #28a745;
       color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
     }
+
+    button:hover {
+      background-color: #218838;
+    }
+
     #enviar {
-      position: absolute; /* botão fora do lugar */
-      top: 5px;
-      right: 5px;
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      width: 80px;
+      height: 40px;
+    }
+
+    .aviso {
+      text-align: center;
+      color: #aa0000;
+      font-size: 13px;
+      margin-top: -10px;
     }
   </style>
 </head>
 <body>
-  <h2>Cadastro de Usuário</h2>
   <div class="container">
+    <h2>Cadastro de Usuário</h2>
     <form onsubmit="enviarFormulario(); return false;">
       <label>Nome:</label>
-      <input type="number" placeholder="Digite seu nome"> <!-- erro: campo tipo number -->
+      <input type="number" placeholder="Digite seu nome"> 
 
       <label>Email:</label>
       <input type="text" placeholder="exemplo@email.com">
 
       <label>Data de Nascimento:</label>
-      <input type="text" placeholder="DD/MM/AAAA"> <!-- deveria ser date -->
+      <input type="text" placeholder="DD/MM/AAAA">
 
       <label>Gênero:</label>
       <select>
-        <option>Sim</option> <!-- opções mal colocadas -->
+        <option>Sim</option> 
         <option>Não</option>
       </select>
 
-      <button type="submit" id="enviar">Enviar</button>
+      <div class="aviso">Clique rápido no botão antes que ele fuja!</div>
+      <button type="submit" id="enviar">Enviar</button> 
     </form>
   </div>
 
