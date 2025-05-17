@@ -130,26 +130,25 @@
     &copy; 2025 - Curso - Introdução ao Teste de Software
   </footer>
 
-<button id="enviar" onclick="enviarFormulario()">Enviar</button>
+ <button id="enviar" onclick="enviarFormulario()">Enviar</button>
 
-  <script>
-    function enviarFormulario() {
-      alert("Cadastro falhou: tente novamente mais tarde!");
-      console.log("Erro: sistema não cadastra ninguém de verdade.");
-    }
+<script>
+  function enviarFormulario() {
+    alert("Cadastro falhou: tente novamente mais tarde!");
+    console.log("Erro: sistema não cadastra ninguém de verdade.");
+  }
 
-    const button = document.getElementById('enviar');
+  let x = 0;
+  let y = 0;
+  const button = document.getElementById('enviar');
 
-    button.addEventListener("mouseenter", () => {
-      const maxX = window.innerWidth - button.offsetWidth;
-      const maxY = window.innerHeight - button.offsetHeight;
-
-      const x = Math.floor(Math.random() * maxX);
-      const y = Math.floor(Math.random() * maxY);
-
-      button.style.transform = `translate(${x}px, ${y}px)`;
-    });
-  </script>
+  button.addEventListener("mouseenter", () => {
+    x = Math.floor(Math.random() * 500);
+    y = Math.floor(Math.random() * -500);
+    console.log(x, y);
+    button.style.transform = translate(${x}px, ${y}px); 
+  });
+</script>
 
 </body>
 </html>
